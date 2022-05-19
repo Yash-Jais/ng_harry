@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="number" class="form-label">ID</label>
+        <input type="number" name="srno" [(ngModel)]="srno" class="form-control" id="number" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" name="title" [(ngModel)]="title" class="form-control" id="title" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <input type="text" name="desc" [(ngModel)]="desc" class="form-control" id="desc">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

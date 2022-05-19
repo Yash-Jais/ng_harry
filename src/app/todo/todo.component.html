@@ -1,0 +1,19 @@
+<div class="container">
+    <p class="lead my-4">This form is used to <span class="fw-bold">make the todo list</span></p>
+    <div class="row my-3 justify-content-center">
+        <div class="col-sm-6">
+            <app-todo-add (todoAdd)="addTodo($event)"></app-todo-add>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div *ngIf="this.todos.length === 0; else elseBlock">No todos to display.</div>
+        <ng-template #elseBlock>
+            <p class="lead">Below todo list which is show in <span class="fw-bold">Card Format</span></p>
+            <div class="col-lg-3 col-md-4 col-sm-6 my-2" *ngFor="let todo of todos; let i = index">
+                <app-todo-item [todo]="todo" [indexValue]="i" (todoDelete)="deleteTodo($event)"
+                    (todoCheckbox)="toggleTodo($event)">
+                </app-todo-item>
+            </div>
+        </ng-template>
+    </div>
+</div>

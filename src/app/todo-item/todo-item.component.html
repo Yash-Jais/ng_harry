@@ -1,0 +1,28 @@
+<div [ngClass]="{'card': true,'h-100': true,'shadow-sm': true,'bg-danger': !todo.active}">
+    <div class="card-body">
+        <h4 [ngClass]="{'card-title': true, 'strike': !todo.active}">{{ todo.title }}</h4>
+        <p [ngClass]="{'strike': !todo.active}">
+            {{ todo.desc }}
+        </p>
+
+        <input type="checkbox" class="me-2" id="todo{{indexValue}}" (click)="onCheckboxClick(todo)"
+            [checked]="!todo.active">
+        <label for="todo{{indexValue}}">Marked as Read</label>
+    </div>
+    <div class="card-footer">
+
+        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+            <button [ngClass]="{'btn':true, 'btn-danger':true, 'btn-dark':!todo.active, 'disabled':!todo.active}"
+                (click)="onBtnclick(todo)">Delete</button>
+        </div>
+
+        
+    </div>
+</div>
+<!-- id="todo{{indexValue}}"
+for="todo{{indexValue}}"
+
+[id]="'check'+todo.srNo"
+[for]="'check'+todo.srNo"
+
+-->
